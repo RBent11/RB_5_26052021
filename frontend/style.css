@@ -86,7 +86,7 @@ i{
     font-size: 12px;
     font-weight: bold;
 }
-.circle{
+#circle{
     width: 20px;
     height: 20px;
     background: #da8300;
@@ -250,6 +250,21 @@ form{
     width: 375px;
     height: auto;
     margin-top: 50px;
+}
+
+
+table{
+    width: 80%;
+    border: 1px solid black;
+    height: auto;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+tr{
+    border: 1px solid black;
+    
 }
 
 @media screen and (min-width: 640px) {
