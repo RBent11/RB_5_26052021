@@ -1,15 +1,4 @@
-export async function getProductsFromAPI(id=null,products) {
-    if(id!=null){
-        return products = await getOneProduct(id);
-    }
-    else{
-        return products = await getAllProducts();
-    }
-
-    
-
-}
-
+//Récupération des données de l'API à l'aide d'un fetch
 export async function getAllProducts() {
     return fetch("http://localhost:3000/api/cameras/")
         .then(function (res) {
@@ -24,6 +13,7 @@ export async function getAllProducts() {
 
 }
 
+//Récupération des données de l'id de chaque produit depuis l'API
 export async function getOneProduct(id) {
     return fetch("http://localhost:3000/api/cameras/" + id)
         .then(function (res) {
@@ -37,3 +27,15 @@ export async function getOneProduct(id) {
         })
 
 }
+
+
+//
+export async function getProductsFromAPI(id = null) {
+    if (id != null) {
+        return products = await getOneProduct(id);
+    } else {
+        return products = await getAllProducts();
+    }
+}
+
+

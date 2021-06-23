@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <!-- <script src="../backend/js/script.js" defer></script> -->
-    <script src="../backend/js/test.js" defer></script>
-    
-    
+    <script src="panier.js" defer></script>
+    <script src="form.js" defer></script>
     <title>Panier</title>
 </head>
 <body>
@@ -18,7 +16,7 @@
         
         <div class="menu">
             <nav>
-                <a href="index.html">Accueil</a>
+                <a href="accueil.html">Accueil</a>
             </nav>
 
             <div class="panier">
@@ -34,8 +32,13 @@
         </div>
         
     </header>
+
+
     <h1 class="page_panier__title">Panier</h1>
     
+
+
+
     <section id="shopping_cart">
 
         <table id="shopping_list">
@@ -55,6 +58,35 @@
 
     </section>
 
+    <section id="formulaire">
+        
+        <form id="form" action="" method="POST">
+            
+            <label for="lastName">Nom</label>
+            <input type="" name="lastName">
+            <small></small>
+
+            <label for="firstName">Prénom</label>
+            <input type="" name="firstName">
+            <small></small>
+
+            <label for="address">Adresse</label>
+            <input type="" name="address">
+            <small></small>
+
+            <label for="city">Ville</label>
+            <input type="" name="city">
+            <small></small>
+
+            <label for="email">Email</label>
+            <input type="" name="email">
+            <small></small>
+
+            <button id="validate_form">Valider</button>
+
+        </form>
+
+    </section>
 
     <!-- <footer>
         <p>&copy; Orinoco - 2021</p>

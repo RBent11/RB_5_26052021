@@ -64,9 +64,9 @@ nav a:hover{
 i{
     font-size: 26px;
     margin: 0 10px 5px 10px;
-    background: -webkit-linear-gradient(left, #cc7c4e, #945dee);
+    /*background: -webkit-linear-gradient(left, #cc7c4e, #945dee);
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;*/
 }
 
 .panier{
@@ -288,6 +288,20 @@ tr{
 
 td{
     height: 80px;
+}
+
+
+#shopping_cart{
+    display: flex;
+    justify-content: center;
+    
+    flex-direction: column-reverse;
+    margin-top: 50px;
+
+}
+
+#shopping_cart p{
+    margin-left: 50px;
 }
 
 @media screen and (min-width: 640px) {
