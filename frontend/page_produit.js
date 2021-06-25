@@ -90,7 +90,7 @@ async function getProductByURL() {
     
     
                     `;
-            
+
         }
     }
 }
@@ -111,7 +111,7 @@ function getLensesSelected() {
 //**************************************************************************
 async function addToCart() {
 
-    
+
     await getProductByURL();
     const btn = document.querySelector("#btn");
     const lenses = document.getElementById("lenses_list");
@@ -134,29 +134,27 @@ async function addToCart() {
         // console.log(oneProduct.name)
         let lenses_choice = getLensesSelected();
         panier.push({
-            productID: oneProduct._id,
+            _id: oneProduct._id,
             name: oneProduct.name,
             price: oneProduct.price,
             lenses: oneProduct.lenses[lenses_choice]
-
         })
         localStorage.setItem("panier", JSON.stringify(panier));
-
-
+        document.location.reload();
     })
-
 }
-
-
 
 addToCart();
 
 
 function circle(){
-    let liste = JSON.parse(localStorage.getItem("panier"));
-    let nb_articles = liste.length; 
-    circle.innerHTML = `${nb_articles}`;
-    console.log(nb_articles)
+    let circle = document.getElementById('circle')
+	let liste = JSON.parse(localStorage.getItem("panier"));
+    if(liste != null){let nb_articles = liste.length; 
+        circle.innerHTML = `${nb_articles}`;
+        console.log(nb_articles)
+        }
+        
 }
 
 circle();

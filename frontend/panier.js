@@ -40,7 +40,7 @@ function getCart(){
             <tr>
                 <td>Total</td>
                 <td>${total}€</td>
-                <td><button><a href="form.html">Procéder au paiement</a></button></td>
+                
             </tr>
             
             `;

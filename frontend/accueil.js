@@ -1,4 +1,4 @@
-//  http://localhost:3000/api/cameras
+// import {getAllProducts, getOneProduct, getProductsFromAPI} from './accessAPI'
 
 //Récupération des données de l'API à l'aide d'un fetch
 async function getAllProducts() {
@@ -43,10 +43,14 @@ async function getProductsFromAPI(id = null) {
 
 
 function circle(){
+    let circle = document.getElementById('circle')
 	let liste = JSON.parse(localStorage.getItem("panier"));
-	let nb_articles = liste.length; 
-	circle.innerHTML = `${nb_articles}`;
-	console.log(nb_articles)
+    if(liste != null){let nb_articles = liste.length; 
+        circle.innerHTML = `${nb_articles}`;
+        console.log(nb_articles)
+        }
+        
+	
 }
 
 
