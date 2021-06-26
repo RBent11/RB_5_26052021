@@ -40,6 +40,7 @@ form.addEventListener('submit', (e) => {
 
     })
     localStorage.setItem("formulaire", JSON.stringify(formulaire));
+    document.location.reload();
 
   } else {
     console.log("non")
@@ -55,7 +56,30 @@ let getProducts = localStorage.getItem('panier')
 
 let products = []
 
-if (getProducts != null) {
+// if (getProducts != null) {
+//   let productsParse = JSON.parse(getProducts)
+//   productsParse.forEach(element => {
+//     products.push(
+//       element._id
+
+//     )
+
+//   });
+
+// }
+
+if (getContact != null && getProducts != null) {
+  let contacts = JSON.parse(getContact)
+
+  let contact = {
+    firstName: contacts[0].firstName,
+    lastName: contacts[0].lastName,
+    address: contacts[0].address,
+    city: contacts[0].city,
+    email: contacts[0].email
+
+  }
+
   let productsParse = JSON.parse(getProducts)
   productsParse.forEach(element => {
     products.push(
@@ -65,51 +89,70 @@ if (getProducts != null) {
 
   });
 
+  //soumission du formulaire
+  let orderInfos = JSON.stringify({
+    contact,
+    products
+  });
+
+  (async function () {
+    const orderID = await postInfo(orderInfos);
+    localStorage.setItem("orderID", JSON.stringify(orderID.orderId))
+    // console.log(orderID.orderId)
+    document.location.href = "confirmation.html"
+  })();
+
 }
 
-let contacts = JSON.parse(getContact)
-
-let contact = {
-  firstName: contacts[0].firstName,
-  lastName: contacts[0].lastName,
-  address: contacts[0].address,
-  city: contacts[0].city,
-  email: contacts[0].email
-
-}
 
 
-//soumission du formulaire
-let orderInfos = JSON.stringify({
-  contact,
-  products
-})
-
-console.log(orderInfos)
-
-postInfo(orderInfos);
 
 
-function postInfo(orderInfos) {
 
-  fetch("http://localhost:3000/api/cameras/order", {
+// console.log(orderInfos)
+
+
+
+
+async function postInfo(orderInfos) {
+
+  return fetch("http://localhost:3000/api/cameras/order", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       mode: 'cors',
       body: orderInfos
-    }).then(response => {
-
-      let data = response.json();
-      console.log(data)
+    }).then(function (res) {
+      return res.json();
 
     })
-    .catch((erreur) => {
-      console.log(erreur)
+    .catch(function (erreur) {
+      alert(erreur);
     })
 };
 
+
+
+// function postInfo(orderInfos) {
+
+//   fetch("http://localhost:3000/api/cameras/order", {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       mode: 'cors',
+//       body: orderInfos
+//     }).then(response => {
+
+//       let data = response.json();
+//       console.log(data)
+
+//     })
+//     .catch((erreur) => {
+//       console.log(erreur)
+//     })
+// };
 
 
 

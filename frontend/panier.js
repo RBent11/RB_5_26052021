@@ -15,7 +15,7 @@ function getCart(){
                 <td>${produit.name}</td>
                 <td>${produit.price}€</td>
                 <td>${produit.lenses}</td>
-                <td><button class="btn_remove" data-id=${i}>Remove</button></td>
+                <td><i class="fas fa-trash btn_remove" data-id=${i}></i></td>
             </tr>
 
         
@@ -76,6 +76,7 @@ function getCart(){
         circle.innerHTML = `${nb_articles}`
 
     }
+    else{circle.innerHTML = `0`}
 }
 
 getCart();

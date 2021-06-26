@@ -154,6 +154,7 @@ function circle(){
         circle.innerHTML = `${nb_articles}`;
         console.log(nb_articles)
         }
+    else{circle.innerHTML = `0`;}
         
 }
 
