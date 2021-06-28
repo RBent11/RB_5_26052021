@@ -1,5 +1,5 @@
 //Récupération des données de l'API à l'aide d'un fetch
-export async function getAllProducts() {
+async function getAllProducts() {
     return fetch("http://localhost:3000/api/cameras/")
         .then(function (res) {
             return res.json();
@@ -14,7 +14,7 @@ export async function getAllProducts() {
 }
 
 //Récupération des données de l'id de chaque produit depuis l'API
-export async function getOneProduct(id) {
+async function getOneProduct(id) {
     return fetch("http://localhost:3000/api/cameras/" + id)
         .then(function (res) {
             return res.json();
@@ -30,7 +30,7 @@ export async function getOneProduct(id) {
 
 
 //
-export async function getProductsFromAPI(id = null) {
+async function getProductsFromAPI(id = null) {
     if (id != null) {
         return products = await getOneProduct(id);
     } else {
