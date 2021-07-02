@@ -56,18 +56,6 @@ let getProducts = localStorage.getItem('panier')
 
 let products = []
 
-// if (getProducts != null) {
-//   let productsParse = JSON.parse(getProducts)
-//   productsParse.forEach(element => {
-//     products.push(
-//       element._id
-
-//     )
-
-//   });
-
-// }
-
 if (getContact != null && getProducts != null) {
   let contacts = JSON.parse(getContact)
 
@@ -98,19 +86,10 @@ if (getContact != null && getProducts != null) {
   (async function () {
     const orderID = await postInfo(orderInfos);
     localStorage.setItem("orderID", JSON.stringify(orderID.orderId))
-    // console.log(orderID.orderId)
     document.location.href = "confirmation.html"
   })();
 
 }
-
-
-
-
-
-
-// console.log(orderInfos)
-
 
 
 
@@ -134,33 +113,12 @@ async function postInfo(orderInfos) {
 
 
 
-// function postInfo(orderInfos) {
-
-//   fetch("http://localhost:3000/api/cameras/order", {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       mode: 'cors',
-//       body: orderInfos
-//     }).then(response => {
-
-//       let data = response.json();
-//       console.log(data)
-
-//     })
-//     .catch((erreur) => {
-//       console.log(erreur)
-//     })
-// };
-
-
 
 
 
 const valideNom = function (nom) {
 
-  let nomRegExp = new RegExp(/[a-z]/, 'g');
+  let nomRegExp = new RegExp(/^([a-zA-Z ]+)$/);
   let testNom = nomRegExp.test(nom.value);
   let lettreMax = nom.value.length;
   let small = nom.nextElementSibling;
@@ -183,7 +141,7 @@ const valideNom = function (nom) {
 
 
 const validePrenom = function (prenom) {
-  let prenomRegExp = new RegExp(/[a-z]/, 'g');
+  let prenomRegExp = new RegExp(/^([a-zA-Z ]+)$/);
 
   let testPrenom = prenomRegExp.test(prenom.value);
   let lettreMax = prenom.value.length;
@@ -204,7 +162,7 @@ const validePrenom = function (prenom) {
 
 
 const valideAddress = function (address) {
-  let addressRegExp = new RegExp(/^[0-9]{1,3}[a-z]+$/, 'g');
+  let addressRegExp = new RegExp(/^[0-9]{1,3}[A-Za-z]+$/, 'g');
 
 
   let addressFormat = address.value.split(" ").join("");
@@ -226,7 +184,7 @@ const valideAddress = function (address) {
 
 
 const valideVille = function (ville) {
-  let villeRegExp = new RegExp(/[A-Za-z]/, 'g');
+  let villeRegExp = new RegExp(/^([a-zA-Z ]+)$/);
 
   let testVille = villeRegExp.test(ville.value);
   let lettreMax = ville.value.length;

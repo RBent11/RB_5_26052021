@@ -1,55 +1,73 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <link rel="shortcut icon" href="#">
-    <script src="accessAPI.js"></script>
-    <script src="accueil.js" defer></script>
-    
-    <title>Orinoco</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+	
+	<script src="js/accessAPI.js"></script>
+	<script src="js/accueil.js" defer></script>
+	<title></title>
 </head>
 <body>
 
-    <div id="main">
-    <header>
-        <img class="logo" src="logo.png" alt="logo du site">
-        
-        <div class="menu">
-            <nav>
-                <a href="accueil.html">Accueil</a>
-            </nav>
+	<header>
 
-            <div class="panier">
-                <div id="circle"></div>
-                <div class="panier__objet">
-                    <a href="panier.html">
-                        <i class="fas fa-shopping-basket"></i>
-                   </a>
-                    <p>Panier</p>
-                </div>
-                
-            </div>
-        </div>
-        
-    </header>
+		<a href="accueil.html"><img class = "logo" src="images/logo.png"></a>
+		
 
 
+		<div class="panier">
+			<div id="circle"></div>
+			<div class="panier__objet">
+				<a href="panier.html">
+					 <i class="fas fa-shopping-cart"></i>
+				</a>
+				<p>Panier</p>
+			</div>
+			
+		</div>
+
+		
+
+	</header>
 
 
-    <section id="product__listing">
-    
+<section id="banniere">
+	
+	<div class="presentation-text">
+		<h1>Découvrez notre gamme d'appareil photo vintage</h1>
+	</div>
 
 
-    </section>
+	<img class="big-appareil" src="images/appareil_seul3.png" alt="">
+
+</section>
 
 
-    <footer>
-        <p>&copy; Orinoco - 2021</p>
-    </footer>
-</div>
+
+<section id="product_listing">
+
+	<h2>Nos appareils photo vintage</h2>
+
+	<div id="product__listing">
+		
+
+	</div> 
+	
+	
+
+</section>
+
+
+
+<footer><p>&copy; Orinoco - 2021</p></footer>
+
+
 </body>
 </html>

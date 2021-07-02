@@ -18,13 +18,13 @@ confirmation.innerHTML = `
 
 <h2>Votre commande a été passé avec succès !</h2>
 
-<h3>Voici l'identifiant de votre commande</h3>
+<h3 >Voici l'identifiant de votre commande</h3>
 
-<p>${orderId}</p>
+<p class="orderID">${orderId}</p>
 
-<h3>Et le prix total</h3>
+<h3>Prix total  de la commande</h3>
 
-<p>${priceTotal}€</p>
+<p class="final_price">${priceTotal/100}€</p>
 
 `;
 

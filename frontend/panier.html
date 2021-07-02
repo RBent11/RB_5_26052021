@@ -1,98 +1,121 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css">
-    <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    <script src="panier.js" defer></script>
-    <script src="form.js" defer></script>
-    <title>Panier</title>
-</head>
-<body>
-    <header>
-        <img class="logo" src="logo.png" alt="logo du site">
-        
-        <div class="menu">
-            <nav>
-                <a href="accueil.html">Accueil</a>
-            </nav>
+<html>
 
-            <div class="panier">
-                <div id="circle"></div>
-                <div class="panier__objet">
-                    <a href="panier.html">
-                         <i class="fas fa-shopping-basket"></i>
-                    </a>
-                    <p>Panier</p>
-                </div>
-                
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+
+    <script src="js/accessAPI.js"></script>
+    <script src="js/panier.js" defer></script>
+    <script src="js/form.js" defer></script>
+
+
+    <title></title>
+
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <a href="accueil.html"><img class="logo" src="images/logo.png"></a>
+
+        <div class="panier">
+            <div id="circle"></div>
+            <div class="panier__objet">
+                <a href="panier.html">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <p>Panier</p>
             </div>
+
         </div>
-        
+
+
     </header>
 
 
-    <h1 class="page_panier__title">Panier</h1>
-    
+
+
+    <section id="shopping">
+
+        <h1 class="page_panier__title">Panier</h1>
+
+
+        <div id="count_cart"></div>
+
+        <div id="shopping_cart">
+
+
+            <div id="shopping_list">
+
+            </div>
 
 
 
-    <section id="shopping_cart">
+            <div id="formulaire">
 
-        <table id="shopping_list">
+                <h3>Entrez vos informations</h3>
 
-            <tr>
-                <th>Nom du produit</th>
-                <th>Prix</th>
-                <th>Lentille</th>
-                
-            </tr>
+                <form id="form" method="POST">
+                    <div class="input_bloc">
+                        <label for="lastName">Nom</label>
+                        <input type="" name="lastName">
+                        <small></small>
+                    </div>
 
 
-            
+                    <div class="input_bloc">
+                        <label for="firstName">Prénom</label>
+                        <input type="" name="firstName">
+                        <small></small>
+                    </div>
 
-        </table>
-        
+                    <div class="input_bloc">
+                        <label for="address">Adresse</label>
+                        <input type="" name="address">
+                        <small></small>
+                    </div>
+
+                    <div class="input_bloc">
+                        <label for="city">Ville</label>
+                        <input type="" name="city">
+                        <small></small>
+                    </div>
+
+                    <div class="input_bloc">
+                        <label for="email">Email</label>
+                        <input type="" name="email">
+                        <small></small>
+                    </div>
+
+                    <button type="submit" id="validate_form">Valider</button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
 
     </section>
 
-    <section id="formulaire">
-        
-        <form id="form" method="POST">
-            
-            <label for="lastName">Nom</label>
-            <input type="" name="lastName">
-            <small></small>
 
-            <label for="firstName">Prénom</label>
-            <input type="" name="firstName">
-            <small></small>
 
-            <label for="address">Adresse</label>
-            <input type="" name="address">
-            <small></small>
-
-            <label for="city">Ville</label>
-            <input type="" name="city">
-            <small></small>
-
-            <label for="email">Email</label>
-            <input type="" name="email">
-            <small></small>
-
-            <button type="submit" id="validate_form" class="btn-style">Valider</button>
-
-        </form>
-
-    </section>
 
     <footer>
         <p>&copy; Orinoco - 2021</p>
     </footer>
 
-
 </body>
+
 </html>
