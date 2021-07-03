@@ -13,16 +13,11 @@ function getCart(){
             }
             shopping_list.innerHTML +=
                 `
-
-
-            <div class="total_price">Total du panier : ${total/100}€</div>
-            
+            <div class="total_price">Total du panier : ${total/100}€</div>       
             
             `;
         })();
         liste.forEach(produit => {
-
-            
 
             shopping_list.innerHTML +=
                 `
@@ -34,7 +29,7 @@ function getCart(){
                     <p class="cart_product__lenses">${produit.lenses}</p>
                     <p class="cart_product__price">${produit.price/100}€</p>
                     
-                    <i class = "fas fa-trash btn_remove"></i>
+                    <i class = "fas fa-trash btn_remove" data-id=${i}></i>
                 </div>
             </div>
 
@@ -45,23 +40,17 @@ function getCart(){
 
         });
 
-
-
-        
-
         let nb_articles = liste.length; 
 
         if(nb_articles > 1){
-        	count_cart.innerHTML +=
-        
+        	count_cart.innerHTML +=       
                 `
             <p>Votre panier contient  ${nb_articles} articles</p>
             
             `;
         }
         else if(nb_articles == 1){
-        	count_cart.innerHTML +=
-        
+        	count_cart.innerHTML +=      
                 `
             <p>Votre panier contient ${nb_articles} article</p>
             
@@ -95,32 +84,19 @@ getCart();
 
 function removeFromCart(){
 
-
 	let btn_remove = document.getElementsByClassName('btn_remove')
 
 	for (let i = 0; i < btn_remove.length; i++) {
         let buttons_remove = btn_remove[i];
         
-
-
-
         buttons_remove.addEventListener('click', (event) => {
 
-
             let id_product = event.target.getAttribute("data-id")
-            console.log(id_product)
-
-
-
             let panier = JSON.parse(localStorage.getItem("panier"))
-            console.log(panier[id_product])
             panier.splice(id_product,1);
             localStorage.setItem("panier", JSON.stringify(panier));
             buttons_remove.parentElement.parentElement.remove();
             document.location.reload();
-
-
-
         })
     }
 }

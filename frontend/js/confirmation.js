@@ -38,3 +38,4 @@ function removeStorage(){
 }
 
 removeStorage();
+circle();

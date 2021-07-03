@@ -1,22 +1,10 @@
-function circle() {
-    let circle = document.getElementById('circle')
-    let liste = JSON.parse(localStorage.getItem("panier"));
-    if (liste != null) {
-        let nb_articles = liste.length;
-        circle.innerHTML = `${nb_articles}`;
-        console.log(nb_articles)
-    } else {
-        circle.innerHTML = `0`;
-    }
-
-
-}
-
+//Variable stockant la cible HTML correspondant à la div qui contiendra toutes les cartes produit
 let product__listing = document.getElementById("product__listing");
 
+
+//Fonction injectant le code HTML de chaque produit selon ses informations dans la balise sélectionnée au dessus.
 async function productsListing() {
     const oneProduct = await getProductsFromAPI();
-    console.log(oneProduct)
     for (let index = 0; index < oneProduct.length; index++) {
         const element = oneProduct[index];
 
@@ -26,10 +14,8 @@ async function productsListing() {
 
                     <div class="background"><img src="${element.imageUrl}" alt=""></div>
                     
-                    <div class="description">    
-    
+                    <div class="description">        
                         <h3 class="product_title">${element.name}</h3>
-        
                         
                         <p class="product_box__price">${element.price/100}€</p>
     
@@ -39,12 +25,8 @@ async function productsListing() {
                     </div>
                 </div>
 
-
-
 					`;
-
     }
-
 
 }
 

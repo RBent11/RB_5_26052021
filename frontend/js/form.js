@@ -41,11 +41,7 @@ form.addEventListener('submit', (e) => {
     })
     localStorage.setItem("formulaire", JSON.stringify(formulaire));
     document.location.reload();
-
-  } else {
-    console.log("non")
   }
-
 });
 
 // OK pour les id produits
@@ -88,9 +84,7 @@ if (getContact != null && getProducts != null) {
     localStorage.setItem("orderID", JSON.stringify(orderID.orderId))
     document.location.href = "confirmation.html"
   })();
-
 }
-
 
 
 async function postInfo(orderInfos) {
@@ -112,10 +106,6 @@ async function postInfo(orderInfos) {
 };
 
 
-
-
-
-
 const valideNom = function (nom) {
 
   let nomRegExp = new RegExp(/^([a-zA-Z ]+)$/);
@@ -133,12 +123,6 @@ const valideNom = function (nom) {
   }
 
 };
-
-
-
-
-
-
 
 const validePrenom = function (prenom) {
   let prenomRegExp = new RegExp(/^([a-zA-Z ]+)$/);
@@ -160,7 +144,6 @@ const validePrenom = function (prenom) {
 };
 
 
-
 const valideAddress = function (address) {
   let addressRegExp = new RegExp(/^[0-9]{1,3}[A-Za-z]+$/, 'g');
 
@@ -180,7 +163,6 @@ const valideAddress = function (address) {
   }
 
 };
-
 
 
 const valideVille = function (ville) {
@@ -221,26 +203,3 @@ const valideEmail = function (email) {
 
 };
 
-
-
-
-
-// let formulaire = []
-// const validateBtn = document.querySelector("#validate_form")
-
-// validateBtn.addEventListener('click', function() {
-//   console.log('bonjour')
-//   // formulaire.push({
-//   //   nom: valideNom(nom)
-//   //   // prenom: validePrenom,
-//   //   // address: valideAddress,
-//   //   // city: valideVille,
-//   //   // email: valideEmail
-//   // })
-//   // localStorage.setItem("formulaire", JSON.stringify(formulaire));
-
-
-
-// })
-
-// // console.log(formulaire)

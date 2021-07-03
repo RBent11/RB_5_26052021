@@ -1,4 +1,4 @@
-//Récupération des données de l'API à l'aide d'un fetch
+//Récupération de toutes les données de l'API à l'aide d'un fetch
 async function getAllProducts() {
     return fetch("http://localhost:3000/api/cameras/")
         .then(function (res) {
@@ -29,7 +29,8 @@ async function getOneProduct(id) {
 }
 
 
-//
+//Fonction permettant d'appeler les deux fonctions du dessus en fonction du paramètre. 
+//Si un id est renseigné, alors le produit correspondant est appelé, sinon tous les produits sont appelés.
 async function getProductsFromAPI(id = null) {
     if (id != null) {
         return products = await getOneProduct(id);

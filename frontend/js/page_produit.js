@@ -1,3 +1,4 @@
+//Fonction permettant de récupérer l'id de chaque produit dans l'url
 function getIDFromURL() {
     let link = window.location.search;
     let urlParams = new URLSearchParams(link)
@@ -5,16 +6,15 @@ function getIDFromURL() {
 }
 
 
-
+//Fonction permettant de récupérer les informations de chaque produit en fonction de son id
+//La fonction injecte le code HTML correspondant et une autre boucle permet d'injecter le code pour les lentilles
 async function getProductByURL() {
 
     const productId = getIDFromURL();
 
     const oneProduct = await getProductsFromAPI(productId);
 
-    page_product__product.innerHTML = `
-            
-
+    page_product__product.innerHTML = ` 
             <div class="page_product__img">
 		
                 <img src="${oneProduct.imageUrl}">
@@ -47,10 +47,7 @@ async function getProductByURL() {
             const element = oneProduct.lenses[j];
 
             lenses.innerHTML += `
-                    
                     <option value=${j}>${element}</option>
-    
-    
                     `;
 
         }
@@ -59,9 +56,8 @@ async function getProductByURL() {
 
 getProductByURL();
 
-
+//Récupère la valeur de la lentille sélectionnée dans le menu déroulant
 function getLensesSelected() {
-
     return lenses_list.options[lenses_list.selectedIndex].value;
 }
 
@@ -73,24 +69,18 @@ function getLensesSelected() {
 //**************************************************************************
 async function addToCart() {
 
-
     await getProductByURL();
     const btn = document.querySelector("#btn");
     const lenses = document.getElementById("lenses_list");
 
-
     const productId = getIDFromURL();
     const oneProduct = await getProductsFromAPI(productId);
-
-
-
 
     let panier = [];
     let panier_storage = localStorage.getItem("panier");
     if (panier_storage != null) {
         panier = JSON.parse(panier_storage);
     }
-
 
     btn.addEventListener('click', () => {
        
@@ -108,17 +98,4 @@ async function addToCart() {
 }
 
 addToCart();
-
-
-function circle(){
-    let circle = document.getElementById('circle')
-	let liste = JSON.parse(localStorage.getItem("panier"));
-    if(liste != null){let nb_articles = liste.length; 
-        circle.innerHTML = `${nb_articles}`;
-        console.log(nb_articles)
-        }
-    else{circle.innerHTML = `0`;}
-        
-}
-
 circle();
