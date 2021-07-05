@@ -14,6 +14,7 @@ async function getAllProducts() {
 }
 
 //Récupération des données de l'id de chaque produit depuis l'API
+
 async function getOneProduct(id) {
     return fetch("http://localhost:3000/api/cameras/" + id)
         .then(function (res) {

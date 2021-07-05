@@ -1,3 +1,7 @@
+/**
+Fonction permettant de récupérer le panier et de l'afficher sur la page panier.
+Inclut l'affichage de la quantité dans le panier
+ */
 function getCart(){
 
 	let liste = JSON.parse(localStorage.getItem("panier"));
@@ -82,6 +86,11 @@ function getCart(){
 
 getCart();
 
+
+/**
+ * Fonction permettant la suppression d'un article du panier 
+ * Suppression dans le localStorage et graphiquement dans le HTML
+ */
 function removeFromCart(){
 
 	let btn_remove = document.getElementsByClassName('btn_remove')

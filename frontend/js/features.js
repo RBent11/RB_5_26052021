@@ -1,3 +1,6 @@
+/**
+ * Fonction permettant l'ajout de l'indicateur de quantité sur l'icône panier
+ */
 function circle() {
     let circle = document.getElementById('circle')
     let liste = JSON.parse(localStorage.getItem("panier"));

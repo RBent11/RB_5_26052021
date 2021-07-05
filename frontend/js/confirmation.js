@@ -1,3 +1,7 @@
+/**
+ * Récupération des informations sur le localStorage pour afficher l'orderID et le prix total sur la page confirmation
+ */
+
 let confirmation = document.getElementById('confirmation');
 
 let orderId = JSON.parse(localStorage.getItem('orderID'));
@@ -28,12 +32,10 @@ confirmation.innerHTML = `
 
 `;
 
-
+/**
+ * Suppression du localStorage 
+ */
 function removeStorage(){
-    localStorage.getItem('panier');
-    localStorage.getItem('formulaire');
-    localStorage.getItem('orderID');
-
     localStorage.clear();
 }
 
