@@ -16,3 +16,13 @@ Création d'un site d-ecommerce dans le cadre de la formation Développeur Web d
 - HTML
 - CSS
 - JavaScript
+
+## Installation
+
+Depuis le dossier backend, lancer la commande 
+
+```shell npm install```
+
+Puis depuis le même dossier, lancer la commande 
+
+```shell node server.js```
