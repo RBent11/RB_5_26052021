@@ -21,8 +21,8 @@ Création d'un site d-ecommerce dans le cadre de la formation Développeur Web d
 
 Depuis le dossier backend, lancer la commande 
 
-```shell npm install```
+```npm install```
 
 Puis depuis le même dossier, lancer la commande 
 
-```shell node server.js```
+```node server.js```
